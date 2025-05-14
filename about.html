@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francis Arkuh - Portfolio</title>
+    <title>About - Francis Arkuh</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,9 +14,9 @@
                 <a href="index.html" class="logo">FRANCIS ARKUH</a>
                 
                 <div class="nav-links">
-                    <a href="index.html" class="active">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
-                    <a href="about.html">About</a>
+                    <a href="about.html" class="active">About</a>
                     <a href="contact.html">Contact</a>
                     
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -37,9 +37,9 @@
             </div>
             
             <div class="mobile-menu">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">About</a>
+                <a href="about.html" class="active">About</a>
                 <a href="contact.html">Contact</a>
                 <div class="mobile-theme-toggle">
                     <span>Dark Mode</span>
@@ -57,66 +57,54 @@
     </nav>
 
     <main>
-        <section class="hero">
+        <section class="about-hero">
             <div class="container">
-                <h1>Francis Arkuh</h1>
-                <p>Architecture Student & Creative Designer</p>
-                <div class="cta-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-                    <a href="about.html" class="btn btn-secondary">About Me</a>
+                <h1>About Me</h1>
+                <p class="subtitle">Architecture Student & Creative Designer</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Statement of Purpose</h2>
+                        <p>As an architecture student, I believe in creating spaces that not only serve their functional purpose but also evoke emotional responses and foster human connections. My work explores the intersection of form, function, and human experience, with a focus on sustainable and innovative design solutions.</p>
+                        
+                        <h2>Education</h2>
+                        <div class="education-item">
+                            <h3>Bachelor of Architecture</h3>
+                            <p class="institution">University of Architecture & Design</p>
+                            <p class="year">2020 - Present</p>
+                        </div>
+                        
+                        <h2>Interests & Expertise</h2>
+                        <ul class="interests-list">
+                            <li>Sustainable Architecture</li>
+                            <li>Urban Design & Planning</li>
+                            <li>3D Modeling & Visualization</li>
+                            <li>Digital Fabrication</li>
+                            <li>Architectural Photography</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Profile Image">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="featured-projects">
+        <section class="cv-section">
             <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="project-grid">
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="https://source.unsplash.com/random/800x600/?architecture" alt="Modern Residential Complex">
-                            <div class="project-overlay">
-                                <a href="project-detail.html" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Architecture</span>
-                            <h3>Modern Residential Complex</h3>
-                            <p>A sustainable housing project featuring innovative design and eco-friendly materials.</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="https://source.unsplash.com/random/800x600/?interior" alt="Contemporary Office Space">
-                            <div class="project-overlay">
-                                <a href="project-detail.html" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Interior Design</span>
-                            <h3>Contemporary Office Space</h3>
-                            <p>A modern workspace design focusing on productivity and employee well-being.</p>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="https://source.unsplash.com/random/800x600/?city" alt="Urban Renewal Project">
-                            <div class="project-overlay">
-                                <a href="project-detail.html" class="btn btn-primary">View Project</a>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Urban Planning</span>
-                            <h3>Urban Renewal Project</h3>
-                            <p>A comprehensive plan for revitalizing an urban neighborhood with sustainable practices.</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="text-center">
-                    <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
-                </div>
+                <h2>Curriculum Vitae</h2>
+                <p>Download my complete CV to learn more about my experience and qualifications.</p>
+                <a href="assets/cv.pdf" class="btn btn-primary" download>
+                    Download CV
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </section>
     </main>
@@ -129,4 +117,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
