@@ -211,4 +211,95 @@ function initCertificatePopup() {
             document.body.appendChild(popup);
         }
     });
-} 
+}
+
+// --- Microinteractions & Animations ---
+
+// Reveal on scroll
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < windowHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
+
+// Page transitions (fade-out on link click, fade-in on load)
+function addPageTransitions() {
+  const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"])');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (link.hostname === window.location.hostname) {
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.4s';
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location = link.href;
+        }, 400);
+      }
+    });
+  });
+  document.body.style.opacity = 0;
+  document.body.style.transition = 'opacity 0.7s';
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.body.style.opacity = 1;
+    }, 50);
+  });
+}
+addPageTransitions();
+
+// Loader logic (for next step)
+function showLoader() {
+  const loader = document.getElementById('page-loader');
+  if (loader) loader.classList.remove('hidden');
+}
+function hideLoader() {
+  const loader = document.getElementById('page-loader');
+  if (loader) loader.classList.add('hidden');
+  setTimeout(() => loader && loader.remove(), 500);
+}
+showLoader();
+window.addEventListener('load', hideLoader);
+
+// Tilt effect (polish)
+document.querySelectorAll('.tilt-element').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * 8;
+    const rotateY = ((x - centerX) / centerX) * -8;
+    el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = '';
+  });
+});
+
+// Ripple effect (polish)
+document.querySelectorAll('.ripple').forEach(el => {
+  el.addEventListener('mousedown', function(e) {
+    let ripple = el.querySelector('.ripple-effect');
+    if (ripple) ripple.remove();
+    ripple = document.createElement('span');
+    ripple.className = 'ripple-effect';
+    ripple.style.left = (e.offsetX - 50) + 'px';
+    ripple.style.top = (e.offsetY - 50) + 'px';
+    el.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// Form field focus/blur polish
+document.querySelectorAll('.neumorphic-input').forEach(input => {
+  input.addEventListener('focus', () => input.classList.add('focused'));
+  input.addEventListener('blur', () => input.classList.remove('focused'));
+}); 

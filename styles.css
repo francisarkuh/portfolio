@@ -271,7 +271,7 @@ body {
     width: 90vw;
     max-width: 400px;
     height: 100vh;
-    background: var(--glass-background);
+    background: rgba(255,255,255,0.93);
     backdrop-filter: blur(18px);
     border-left: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
@@ -285,7 +285,7 @@ body {
     z-index: 1100;
 }
 [data-theme="dark"] .mobile-menu {
-    background: rgba(30,32,38,0.97);
+    background: rgba(30,32,38,0.98);
     box-shadow: 0 8px 32px rgba(44,62,80,0.32);
 }
 .mobile-menu.active {
