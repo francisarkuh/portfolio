@@ -2246,47 +2246,39 @@ footer {
 /* Navigation and Common Elements */
 @media (max-width: 900px) {
     .nav-content {
-        padding: 0.8rem 1rem;
+        padding: 1.2rem 1rem;
     }
-
     .logo img {
         height: 1.8rem !important;
     }
-
     .mobile-menu {
         padding: 5rem 1.5rem 2rem 1.5rem;
     }
-
     .mobile-menu a {
         font-size: 1.1rem;
         padding: 0.8rem 0;
     }
-
     .container {
-        padding: 0 1.2rem;
+        padding: 1.5rem 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .nav-content {
-        padding: 0.7rem 1rem;
+        padding: 1.2rem 1rem;
     }
-
     .logo img {
         height: 1.6rem !important;
     }
-
     .mobile-menu {
         padding: 4rem 1.2rem 2rem 1.2rem;
     }
-
     .mobile-menu a {
         font-size: 1rem;
         padding: 0.7rem 0;
     }
-
     .container {
-        padding: 0 1rem;
+        padding: 1.3rem 1.3rem;
     }
 }
 
