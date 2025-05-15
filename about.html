@@ -6,53 +6,40 @@
     <title>About - Francis Arkuh</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/FA.png">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">FRANCIS ARKUH</a>
-                
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="about.html" class="active">About</a>
-                    <a href="contact.html">Contact</a>
-                    
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-                        </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="mobile-menu">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
+            <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="about.html" class="active">About</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <div class="mobile-theme-toggle">
-                    <span>Dark Mode</span>
-                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-                        </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
+                <a href="certificates.html">Certificates</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="certificates.html">Certificates</a>
+            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon moon-icon"></i>
+                <i class="fas fa-sun sun-icon"></i>
+            </button>
         </div>
     </nav>
 
@@ -68,14 +55,16 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-text">
-                        <h2>Statement of Purpose</h2>
-                        <p>As an architecture student, I believe in creating spaces that not only serve their functional purpose but also evoke emotional responses and foster human connections. My work explores the intersection of form, function, and human experience, with a focus on sustainable and innovative design solutions.</p>
+                        <h2>About Me</h2>
+                        <p>I am a passionate architecture student dedicated to innovative design and creative problem-solving. My journey is marked by academic excellence and a commitment to continuous learning.</p>
+                        <a href="certificates.html" class="service-link">See My Honors & Certificates</a>
                         
                         <h2>Education</h2>
                         <div class="education-item">
-                            <h3>Bachelor of Architecture</h3>
-                            <p class="institution">University of Architecture & Design</p>
-                            <p class="year">2020 - Present</p>
+                            <h3>Bachelor of Science in Architecture</h3>
+                            <span class="institution">University Name</span> <span class="year">2020 - Present</span>
+                            <br>
+                            <a href="certificates.html" class="btn btn-secondary" style="margin-top:0.7rem;display:inline-block;">View Academic Certificates</a>
                         </div>
                         
                         <h2>Interests & Expertise</h2>
@@ -111,10 +100,29 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Francis Arkuh. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <p>Architecture & Design Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="certificates.html">Certificates</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Francis Arkuh. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html> 

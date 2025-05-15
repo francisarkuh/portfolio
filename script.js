@@ -1,53 +1,116 @@
-// Theme handling
-const themeToggle = document.getElementById('theme-toggle');
-const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Set initial theme based on system preference or stored preference
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme) {
-    document.body.classList.toggle('dark-theme', storedTheme === 'dark');
-} else {
-    document.body.classList.toggle('dark-theme', prefersDarkScheme.matches);
-}
-
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
-
-themeToggle?.addEventListener('click', toggleTheme);
-mobileThemeToggle?.addEventListener('click', toggleTheme);
-
-// Mobile menu handling
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-const navLinks = document.querySelectorAll('.nav-links a');
-
-mobileMenuToggle?.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    mobileMenuToggle.setAttribute('aria-expanded', 
-        mobileMenu.classList.contains('active'));
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (event) => {
-    if (mobileMenu?.classList.contains('active') && 
-        !event.target.closest('.mobile-menu') && 
-        !event.target.closest('.mobile-menu-toggle')) {
-        mobileMenu.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Set initial theme
+    const currentTheme = localStorage.getItem('theme') || 
+        (prefersDarkScheme.matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Toggle theme function
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Add transition class
+        document.body.classList.add('theme-transition');
+        setTimeout(() => {
+            document.body.classList.remove('theme-transition');
+        }, 300);
     }
+    
+    // Add click event listeners
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleTheme);
+    });
+    
+    // Listen for system theme changes
+    prefersDarkScheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', 
+                e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    const closeBtn = document.querySelector('.mobile-menu-close');
+
+    // Hamburger animation
+    function toggleMenu() {
+        menuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Toggle menu on hamburger click
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu on close button click
+    if (closeBtn) {
+        closeBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Close menu when clicking a link
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('active')) toggleMenu();
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)) {
+            toggleMenu();
+        }
+    });
+}
+
+// Initialize all functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme toggle
+    initThemeToggle();
+    
+    // Initialize mobile menu
+    initMobileMenu();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize project image popup
+    initProjectImagePopup();
+    
+    // Initialize certificate popup
+    initCertificatePopup();
 });
 
-// Close mobile menu when clicking a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu?.classList.remove('active');
-        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
     });
-});
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -63,156 +126,89 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Image gallery functionality
-const galleryItems = document.querySelectorAll('.gallery-item');
-let currentImageIndex = 0;
+// Remove previous lightbox code and add new floating image popup
+function initProjectImagePopup() {
+    document.querySelectorAll('.project-image img').forEach(img => {
+        img.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Remove any existing popup
+            const existing = document.querySelector('.image-popup');
+            if (existing) existing.remove();
 
-function createLightbox() {
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = `
-        <div class="lightbox-content">
-            <button class="lightbox-close">&times;</button>
-            <button class="lightbox-prev">&lt;</button>
-            <button class="lightbox-next">&gt;</button>
-            <img src="" alt="">
-        </div>
-    `;
-    document.body.appendChild(lightbox);
-    return lightbox;
+            // Create popup container
+            const popup = document.createElement('div');
+            popup.className = 'image-popup';
+
+            // Create image element
+            const popupImg = document.createElement('img');
+            popupImg.src = img.src;
+            popupImg.alt = img.alt;
+            popupImg.className = 'popup-img';
+
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'image-popup-close';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.setAttribute('aria-label', 'Close');
+
+            // Close on click
+            closeBtn.addEventListener('click', () => {
+                popup.remove();
+            });
+
+            // Append elements
+            popup.appendChild(popupImg);
+            popup.appendChild(closeBtn);
+            document.body.appendChild(popup);
+        });
+    });
 }
 
-const lightbox = createLightbox();
-const lightboxImg = lightbox.querySelector('img');
-const lightboxClose = lightbox.querySelector('.lightbox-close');
-const lightboxPrev = lightbox.querySelector('.lightbox-prev');
-const lightboxNext = lightbox.querySelector('.lightbox-next');
-
-function showLightbox(index) {
-    const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
-    currentImageIndex = index;
-    lightboxImg.src = images[currentImageIndex];
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function hideLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
-    lightboxImg.src = galleryItems[currentImageIndex].querySelector('img').src;
-}
-
-function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-    lightboxImg.src = galleryItems[currentImageIndex].querySelector('img').src;
-}
-
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => showLightbox(index));
-});
-
-lightboxClose.addEventListener('click', hideLightbox);
-lightboxPrev.addEventListener('click', showPrevImage);
-lightboxNext.addEventListener('click', showNextImage);
-
-// Close lightbox with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        hideLightbox();
-    } else if (e.key === 'ArrowLeft' && lightbox.classList.contains('active')) {
-        showPrevImage();
-    } else if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) {
-        showNextImage();
-    }
-});
-
-// Close lightbox when clicking outside the image
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        hideLightbox();
-    }
-});
-
-// Add CSS for lightbox
-const style = document.createElement('style');
-style.textContent = `
-    .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .lightbox.active {
-        display: flex;
-    }
-
-    .lightbox-content {
-        position: relative;
-        max-width: 90%;
-        max-height: 90vh;
-    }
-
-    .lightbox-content img {
-        max-width: 100%;
-        max-height: 90vh;
-        object-fit: contain;
-    }
-
-    .lightbox-close,
-    .lightbox-prev,
-    .lightbox-next {
-        position: absolute;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 1rem;
-        transition: opacity 0.3s ease;
-    }
-
-    .lightbox-close {
-        top: -2rem;
-        right: -2rem;
-    }
-
-    .lightbox-prev {
-        left: -4rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .lightbox-next {
-        right: -4rem;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .lightbox-close:hover,
-    .lightbox-prev:hover,
-    .lightbox-next:hover {
-        opacity: 0.7;
-    }
-
-    @media (max-width: 768px) {
-        .lightbox-prev {
-            left: 1rem;
+// Certificate image popup preview
+function initCertificatePopup() {
+    // Delegate for dynamically loaded certificates
+    document.body.addEventListener('click', function(e) {
+        // Handle expand button or image click
+        const expandBtn = e.target.closest('.view-certificate');
+        const certImg = e.target.closest('.certificate-image img');
+        let imgSrc = null;
+        let imgAlt = '';
+        if (expandBtn) {
+            // Find the image inside the same certificate card
+            const card = expandBtn.closest('.certificate-card');
+            if (card) {
+                const img = card.querySelector('.certificate-image img');
+                if (img) {
+                    imgSrc = img.src;
+                    imgAlt = img.alt;
+                }
+            }
+        } else if (certImg) {
+            imgSrc = certImg.src;
+            imgAlt = certImg.alt;
         }
-
-        .lightbox-next {
-            right: 1rem;
+        if (imgSrc) {
+            // Remove any existing popup
+            const existing = document.querySelector('.image-popup');
+            if (existing) existing.remove();
+            // Create popup container
+            const popup = document.createElement('div');
+            popup.className = 'image-popup';
+            // Create image element
+            const popupImg = document.createElement('img');
+            popupImg.src = imgSrc;
+            popupImg.alt = imgAlt;
+            popupImg.className = 'popup-img';
+            // Create close button
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'image-popup-close';
+            closeBtn.innerHTML = '&times;';
+            closeBtn.setAttribute('aria-label', 'Close');
+            closeBtn.addEventListener('click', () => popup.remove());
+            // Append elements
+            popup.appendChild(popupImg);
+            popup.appendChild(closeBtn);
+            document.body.appendChild(popup);
         }
-    }
-`;
-document.head.appendChild(style); 
+    });
+} 

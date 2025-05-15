@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates & Honors - Francis Arkuh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/FA.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="certificates.html">Certificates</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="certificates.html">Certificates</a>
+            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon moon-icon"></i>
+                <i class="fas fa-sun sun-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="certificates-hero">
+            <div class="container">
+                <h1>Certificates & Honors</h1>
+                <p class="subtitle">Recognitions of Excellence in Leadership & Innovation</p>
+            </div>
+        </section>
+
+        <section class="certificates-content">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                    <button class="filter-btn" data-filter="extracurricular">Extracurricular</button>
+                </div>
+
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Certificates will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <p>Architecture & Design Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="certificates.html">Certificates</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Francis Arkuh. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Certificate data
+        const certificates = [
+            {
+                title: "CATHSU Vice President",
+                issuer: "Catholic Students Union",
+                date: "2024",
+                category: "leadership",
+                image: "certificates/Cathsu Vice President.jpg",
+                description: "Leadership role in student governance"
+            },
+            {
+                title: "CATHSU Assistant Organist",
+                issuer: "Catholic Students Union",
+                date: "2024",
+                category: "extracurricular",
+                image: "certificates/Cathsu Assistant Organist.jpg",
+                description: "Musical leadership and service"
+            },
+            {
+                title: "Entertainment Prefect",
+                issuer: "School Administration",
+                date: "2024",
+                category: "leadership",
+                image: "certificates/Entertainment Prefect Certificate.jpg",
+                description: "Student leadership in entertainment and events"
+            },
+            {
+                title: "First Lego League Certificate",
+                issuer: "First Lego League",
+                date: "2024",
+                category: "academic",
+                image: "certificates/First Lego League  Certificate.jpg",
+                description: "Achievement in robotics and innovation"
+            },
+            {
+                title: "First Lego League Medal",
+                issuer: "First Lego League",
+                date: "2024",
+                category: "academic",
+                image: "certificates/First Lego League medal_.jpg",
+                description: "Recognition for excellence in robotics competition"
+            },
+            {
+                title: "Choir Certificate",
+                issuer: "School Administration",
+                date: "2024",
+                category: "extracurricular",
+                image: "certificates/Choir Certificate.jpg",
+                description: "Contribution to school choir"
+            },
+            {
+                title: "House Executive Certificate",
+                issuer: "School Administration",
+                date: "2024",
+                category: "leadership",
+                image: "certificates/House Executive Certificate.jpg",
+                description: "Leadership in house system"
+            },
+            {
+                title: "Robotics Certificate",
+                issuer: "School Administration",
+                date: "2024",
+                category: "academic",
+                image: "certificates/Robotics certificate.jpg",
+                description: "Achievement in robotics program"
+            },
+            {
+                title: "Science Club Certificate",
+                issuer: "Science Club",
+                date: "2024",
+                category: "academic",
+                image: "certificates/Science Club Certificate.jpg",
+                description: "Contribution to science club activities"
+            },
+            {
+                title: "Tech Era Certificate",
+                issuer: "Tech Era",
+                date: "2024",
+                category: "academic",
+                image: "certificates/Tech Era certificate.jpg",
+                description: "Participation in technology program"
+            },
+            {
+                title: "Science Club Innovation Projects",
+                issuer: "Science Club",
+                date: "2024",
+                category: "academic",
+                image: "certificates/Science Club Innovation Projects Participation certificate.jpg",
+                description: "Participation in innovation projects"
+            }
+        ];
+
+        // Function to create a certificate card
+        function createCertificateCard(certificate) {
+            const card = document.createElement('div');
+            card.className = 'certificate-card';
+            card.dataset.category = certificate.category;
+
+            card.innerHTML = `
+                <div class="certificate-image">
+                    <img src="${certificate.image}" alt="${certificate.title}">
+                    <div class="certificate-overlay">
+                        <button class="view-certificate" onclick="openCertificate('${certificate.image}')">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="certificate-info">
+                    <span class="certificate-category">${certificate.category}</span>
+                    <h3>${certificate.title}</h3>
+                    <p>${certificate.issuer}</p>
+                    <p class="certificate-date">${certificate.date}</p>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Function to load certificates
+        function loadCertificates() {
+            const grid = document.getElementById('certificates-grid');
+            certificates.forEach(cert => {
+                const card = createCertificateCard(cert);
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                button.classList.add('active');
+
+                // Filter certificates
+                const filter = button.dataset.filter;
+                document.querySelectorAll('.certificate-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Load certificates when the page loads
+        document.addEventListener('DOMContentLoaded', loadCertificates);
+    </script>
+</body>
+</html> 

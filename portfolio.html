@@ -5,54 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Francis Arkuh</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/FA.png">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">FRANCIS ARKUH</a>
-                
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="portfolio.html" class="active">Portfolio</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-                        </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="mobile-menu">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
+            <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="portfolio.html">Portfolio</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <div class="mobile-theme-toggle">
-                    <span>Dark Mode</span>
-                    <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-                        </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
+                <a href="certificates.html">Certificates</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="certificates.html">Certificates</a>
+            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon moon-icon"></i>
+                <i class="fas fa-sun sun-icon"></i>
+            </button>
         </div>
     </nav>
 
@@ -60,97 +47,154 @@
         <section class="portfolio-hero">
             <div class="container">
                 <h1>My Portfolio</h1>
-                <p class="subtitle">A collection of my architectural and design projects</p>
+                <p class="subtitle">A showcase of my architectural and design projects</p>
+                <a href="certificates.html" class="btn btn-secondary" style="margin-top:1.5rem;">See Project Certificates</a>
             </div>
         </section>
 
         <section class="portfolio-content">
             <div class="container">
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-category="all">All Projects</button>
+                    <button class="filter-btn active" data-category="all">All</button>
                     <button class="filter-btn" data-category="architecture">Architecture</button>
-                    <button class="filter-btn" data-category="interior">Interior Design</button>
-                    <button class="filter-btn" data-category="urban">Urban Planning</button>
+                    <button class="filter-btn" data-category="technical">Technical</button>
+                    <button class="filter-btn" data-category="events">Events</button>
                 </div>
 
                 <div class="portfolio-grid">
-                    <a href="project-detail.html" class="project-card" data-category="architecture">
+                    <!-- Architecture Projects -->
+                    <div class="project-card" data-category="architecture">
                         <div class="project-image">
-                            <img src="images/project1.jpg" alt="Modern Residential Complex">
-                            <div class="project-overlay">
-                                <span class="project-category">Architecture</span>
-                            </div>
+                            <img src="assets/residential_floor_plan_layout.jpg" alt="Residential Floor Plan Layout" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Modern Residential Complex</h3>
-                            <p>A sustainable housing project featuring innovative design and green spaces</p>
+                        <div class="project-content">
+                            <span class="project-category">Architecture</span>
+                            <h3>Residential Floor Plan</h3>
+                            <p>Innovative residential layout design focusing on functionality and space optimization.</p>
                         </div>
-                    </a>
-
-                    <a href="project-detail.html" class="project-card" data-category="interior">
+                    </div>
+                    <div class="project-card" data-category="architecture">
                         <div class="project-image">
-                            <img src="images/project2.jpg" alt="Contemporary Office Space">
-                            <div class="project-overlay">
-                                <span class="project-category">Interior Design</span>
-                            </div>
+                            <img src="assets/technical_architectural_drawings.jpg" alt="Technical Architectural Drawings" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Contemporary Office Space</h3>
-                            <p>Modern workspace design focusing on productivity and employee well-being</p>
+                        <div class="project-content">
+                            <span class="project-category">Architecture</span>
+                            <h3>Technical Drawings</h3>
+                            <p>Detailed technical drawings showcasing precision and attention to detail.</p>
                         </div>
-                    </a>
-
-                    <a href="project-detail.html" class="project-card" data-category="urban">
+                    </div>
+                    <div class="project-card" data-category="architecture">
                         <div class="project-image">
-                            <img src="images/project3.jpg" alt="Urban Renewal Project">
-                            <div class="project-overlay">
-                                <span class="project-category">Urban Planning</span>
-                            </div>
+                            <img src="assets/construction_site_layout.JPG" alt="Construction Site Layout" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Urban Renewal Project</h3>
-                            <p>Transforming abandoned industrial areas into vibrant community spaces</p>
+                        <div class="project-content">
+                            <span class="project-category">Architecture</span>
+                            <h3>Construction Site Layout</h3>
+                            <p>Comprehensive site planning and layout design for construction projects.</p>
                         </div>
-                    </a>
-
-                    <a href="project-detail.html" class="project-card" data-category="architecture">
+                    </div>
+                    <!-- Technical Projects -->
+                    <div class="project-card" data-category="technical">
                         <div class="project-image">
-                            <img src="images/project4.jpg" alt="Cultural Center">
-                            <div class="project-overlay">
-                                <span class="project-category">Architecture</span>
-                            </div>
+                            <img src="assets/motor_control_code.JPG" alt="Motor Control Code" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Cultural Center</h3>
-                            <p>A modern cultural hub celebrating local arts and community engagement</p>
+                        <div class="project-content">
+                            <span class="project-category">Technical</span>
+                            <h3>Motor Control System</h3>
+                            <p>Advanced motor control system implementation with precise code architecture.</p>
                         </div>
-                    </a>
-
-                    <a href="project-detail.html" class="project-card" data-category="interior">
+                    </div>
+                    <div class="project-card" data-category="technical">
                         <div class="project-image">
-                            <img src="images/project5.jpg" alt="Luxury Apartment">
-                            <div class="project-overlay">
-                                <span class="project-category">Interior Design</span>
-                            </div>
+                            <img src="assets/coca_cola_vending_prototype.jpg" alt="Coca Cola Vending Prototype" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Luxury Apartment</h3>
-                            <p>High-end residential interior design with premium finishes and smart technology</p>
+                        <div class="project-content">
+                            <span class="project-category">Technical</span>
+                            <h3>Vending Machine Prototype</h3>
+                            <p>Innovative vending machine prototype with modern design and functionality.</p>
                         </div>
-                    </a>
-
-                    <a href="project-detail.html" class="project-card" data-category="urban">
+                    </div>
+                    <div class="project-card" data-category="technical">
                         <div class="project-image">
-                            <img src="images/project6.jpg" alt="Public Park Design">
-                            <div class="project-overlay">
-                                <span class="project-category">Urban Planning</span>
-                            </div>
+                            <img src="assets/autonomous_robot_red_led.jpg" alt="Autonomous Robot" loading="lazy">
                         </div>
-                        <div class="project-info">
-                            <h3>Public Park Design</h3>
-                            <p>Sustainable public space design promoting community interaction and recreation</p>
+                        <div class="project-content">
+                            <span class="project-category">Technical</span>
+                            <h3>Autonomous Robot</h3>
+                            <p>Advanced autonomous robot with integrated sensor systems and LED indicators.</p>
                         </div>
-                    </a>
+                    </div>
+                    <div class="project-card" data-category="technical">
+                        <div class="project-image">
+                            <img src="assets/smart_barrier_sensor_gate.jpg" alt="Smart Barrier Sensor Gate" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Technical</span>
+                            <h3>Smart Barrier Sensor Gate</h3>
+                            <p>An automated barrier system integrating sensors for enhanced security and efficient access control in modern facilities.</p>
+                        </div>
+                    </div>
+                    <!-- Teamwork/Events Projects -->
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/fll_team_collaboration.JPG" alt="FLL Team Collaboration" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Teamwork</span>
+                            <h3>FLL Team Collaboration</h3>
+                            <p>Collaborative robotics project for the First Lego League, emphasizing teamwork, innovation, and problem-solving skills.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/keyboard_performance_church_event.jpg" alt="Keyboard Performance at Church Event" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Events</span>
+                            <h3>Church Event Performance</h3>
+                            <p>Live keyboard performance at a special church event.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/keyboard_performance_mass.jpg" alt="Keyboard Performance at Mass" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Events</span>
+                            <h3>Mass Keyboard Performance</h3>
+                            <p>Keyboard performance during a large community mass event.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/sound_engineer_event_control_1.jpg" alt="Sound Engineering Event Control 1" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Events</span>
+                            <h3>Sound Engineering (Event 1)</h3>
+                            <p>Professional sound engineering setup for live events.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/sound_engineer_event_control_2.jpg" alt="Sound Engineering Event Control 2" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Events</span>
+                            <h3>Sound Engineering (Event 2)</h3>
+                            <p>Advanced sound engineering and event control for large gatherings.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="events">
+                        <div class="project-image">
+                            <img src="assets/anti_malpractice_ges_poster.JPG" alt="Anti-Malpractice GES Poster" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Events</span>
+                            <h3>Anti-Malpractice Campaign</h3>
+                            <p>Educational poster design for anti-malpractice campaign.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -158,10 +202,29 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Francis Arkuh. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <p>Architecture & Design Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="certificates.html">Certificates</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Francis Arkuh. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
     <script>
         // Portfolio filtering functionality
