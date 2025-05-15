@@ -18,10 +18,10 @@
                 <a href="portfolio.html">Portfolio</a>
                 <a href="about.html">About</a>
                 <a href="certificates.html">Certificates</a>
-                <a href="contact.html">Contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
+                <a href="contact.html" class="active">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon toggle-icon"></i>
+                    <i class="fas fa-moon moon-icon toggle-icon"></i>
                 </button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -35,10 +35,10 @@
             <a href="portfolio.html">Portfolio</a>
             <a href="about.html">About</a>
             <a href="certificates.html">Certificates</a>
-            <a href="contact.html">Contact</a>
-            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
+            <a href="contact.html" class="active">Contact</a>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun sun-icon toggle-icon"></i>
+                <i class="fas fa-moon moon-icon toggle-icon"></i>
             </button>
         </div>
     </nav>
@@ -46,38 +46,34 @@
     <main>
         <section class="contact-hero">
             <div class="container">
-                <h1>Get in Touch</h1>
-                <p class="subtitle">Let's discuss your project or collaboration</p>
+                <h1 class="text-3d reveal">Get in Touch</h1>
+                <p class="subtitle reveal">Let's discuss your project or collaboration</p>
             </div>
         </section>
 
         <section class="contact-content">
             <div class="container">
                 <div class="contact-grid">
-                    <div class="contact-form">
-                        <h2>Send a Message</h2>
+                    <div class="contact-form glass-card reveal">
+                        <h2 class="text-3d">Send a Message</h2>
                         <form action="https://formspree.io/f/xpwdkyee" method="POST">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input type="text" id="name" name="name" class="neumorphic-input" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" class="neumorphic-input" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
+                                <input type="text" id="subject" name="subject" class="neumorphic-input" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="6" required></textarea>
+                                <textarea id="message" name="message" rows="6" class="neumorphic-input" required></textarea>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary ripple">
                                 Send Message
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -85,9 +81,8 @@
                             </button>
                         </form>
                     </div>
-                    
-                    <div class="contact-info">
-                        <h2>Contact Information</h2>
+                    <div class="contact-info glass-card reveal">
+                        <h2 class="text-3d">Contact Information</h2>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:francisarkuh24@gmail.com">francisarkuh24@gmail.com</a>
@@ -103,9 +98,9 @@
                         <div class="social-links">
                             <h3>Connect with me</h3>
                             <div class="social-grid">
-                                <a href="https://linkedin.com/in/francisarkuh" class="social-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                                <a href="https://instagram.com/francisarkuh" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="https://behance.net/francisarkuh" class="social-link" target="_blank"><i class="fab fa-behance"></i> Behance</a>
+                                <a href="https://linkedin.com/in/francisarkuh" class="social-link ripple" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="https://instagram.com/francisarkuh" class="social-link ripple" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="https://behance.net/francisarkuh" class="social-link ripple" target="_blank"><i class="fab fa-behance"></i> Behance</a>
                             </div>
                         </div>
                     </div>
@@ -118,27 +113,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
                     <p>Architecture & Design Portfolio</p>
                 </div>
                 <div class="footer-links">
+                    <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
                     <a href="about.html">About</a>
                     <a href="certificates.html">Certificates</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="active">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn" class="ripple"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram" class="ripple"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance" class="ripple"><i class="fab fa-behance"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Francis Arkuh. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Francis Arkuh. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

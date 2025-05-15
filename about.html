@@ -16,12 +16,12 @@
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">About</a>
+                <a href="about.html" class="active">About</a>
                 <a href="certificates.html">Certificates</a>
                 <a href="contact.html">Contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon toggle-icon"></i>
+                    <i class="fas fa-moon moon-icon toggle-icon"></i>
                 </button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -32,13 +32,13 @@
         </div>
         <div class="mobile-menu">
             <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
             <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
             <a href="certificates.html">Certificates</a>
             <a href="contact.html">Contact</a>
-            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun sun-icon toggle-icon"></i>
+                <i class="fas fa-moon moon-icon toggle-icon"></i>
             </button>
         </div>
     </nav>
@@ -46,41 +46,64 @@
     <main>
         <section class="about-hero">
             <div class="container">
-                <h1>About Me</h1>
-                <p class="subtitle">Architecture Student & Creative Designer</p>
+                <h1 class="text-3d reveal">About Me</h1>
+                <p class="subtitle reveal">Architecture Student & Creative Designer</p>
             </div>
         </section>
 
         <section class="about-content">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-text">
-                        <h2>About Me</h2>
-                        <p>I'm Francis Arkuh — an architecture student driven by curiosity, creativity, and a deep respect for purposeful design. Whether drafting spatial experiences or exploring new technologies, I approach every challenge with a designer's mindset and a builder's discipline. My journey reflects a commitment to thoughtful innovation, academic excellence, and a passion for shaping environments that inspire.</p>
-                        <br>
-                        <h2>Education</h2>
-                        <div class="education-item">
-                            <h3>Bachelor of Science in Architecture</h3>
-                            <span class="institution">Kwame Nkrumah University of Science and Technology</span>
-                            <br>
-                            <span class="year">2020 - Present</span>
-                            <br>
-                            <br>
-                            <a href="certificates.html" class="btn btn-secondary" style="margin-top:0.7rem;display:inline-block;">View Academic Certificates</a>
+                    <div class="about-text glass-card">
+                        <h2 class="text-3d">About Me</h2>
+                        <p class="reveal">I'm Francis Arkuh — an architecture student driven by curiosity, creativity, and a deep respect for purposeful design. Whether drafting spatial experiences or exploring new technologies, I approach every challenge with a designer's mindset and a builder's discipline. My journey reflects a commitment to thoughtful innovation, academic excellence, and a passion for shaping environments that inspire.</p>
+                        
+                        <div class="education-section glass-card">
+                            <h2 class="text-3d">Education</h2>
+                            <div class="education-item reveal">
+                                <h3>Bachelor of Science in Architecture</h3>
+                                <span class="institution">Kwame Nkrumah University of Science and Technology</span>
+                                <br>
+                                <span class="year" style="display:block;margin-top:0.2em;font-weight:600;color:var(--accent-color);">2024 - Present</span>
+                                <a href="certificates.html" class="btn btn-secondary ripple" style="margin-top:1.2em;display:inline-block;">View Academic Certificates</a>
+                            </div>
                         </div>
                         
-                        <h2>Interests & Expertise</h2>
-                        <ul class="interests-list">
-                            <li>Sustainable Architecture</li>
-                            <li>Urban Design & Planning</li>
-                            <li>3D Modeling & Visualization</li>
-                            <li>Digital Fabrication</li>
-                            <li>Architectural Photography</li>
-                        </ul>
+                        <div class="interests-section glass-card">
+                            <h2 class="text-3d">Interests & Expertise</h2>
+                            <ul class="interests-list reveal">
+                                <li class="interest-item">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Sustainable Architecture</span>
+                                </li>
+                                <li class="interest-item">
+                                    <i class="fas fa-city"></i>
+                                    <span>Urban Design & Planning</span>
+                                </li>
+                                <li class="interest-item">
+                                    <i class="fas fa-cube"></i>
+                                    <span>3D Modeling & Visualization</span>
+                                </li>
+                                <li class="interest-item">
+                                    <i class="fas fa-print"></i>
+                                    <span>Digital Fabrication</span>
+                                </li>
+                                <li class="interest-item">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Architectural Photography</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     
-                    <div class="about-image">
+                    <div class="about-image glass-card tilt-element">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Profile Image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Francis Arkuh</h3>
+                                <p>Architecture Student & Designer</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,14 +111,14 @@
 
         <section class="cv-section">
             <div class="container">
-                <h2>Curriculum Vitae</h2>
-                <p>Download my complete CV to learn more about my experience and qualifications.</p>
-                <a href="assets/cv.pdf" class="btn btn-primary" download>
-                    Download CV
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </a>
+                <div class="cv-content glass-card">
+                    <h2 class="text-3d">Curriculum Vitae</h2>
+                    <p class="reveal">Download my complete CV to learn more about my experience and qualifications.</p>
+                    <a href="assets/cv.pdf" class="btn btn-primary ripple" download>
+                        Download CV
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -104,27 +127,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
                     <p>Architecture & Design Portfolio</p>
                 </div>
                 <div class="footer-links">
+                    <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
-                    <a href="portfolio.html">Portfolio</a>
                     <a href="about.html">About</a>
+                    <a href="portfolio.html">Portfolio</a>
                     <a href="certificates.html">Certificates</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn" class="ripple"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram" class="ripple"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance" class="ripple"><i class="fab fa-behance"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Francis Arkuh. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Francis Arkuh. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html> 

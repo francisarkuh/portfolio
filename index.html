@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francis Arkuh - Architecture & Design Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/FA.png">
 </head>
@@ -14,14 +14,14 @@
         <div class="container nav-content">
             <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="about.html">About</a>
                 <a href="certificates.html">Certificates</a>
                 <a href="contact.html">Contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon toggle-icon"></i>
+                    <i class="fas fa-moon moon-icon toggle-icon"></i>
                 </button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -31,14 +31,14 @@
             </button>
         </div>
         <div class="mobile-menu">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="about.html">About</a>
             <a href="certificates.html">Certificates</a>
             <a href="contact.html">Contact</a>
-            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun sun-icon toggle-icon"></i>
+                <i class="fas fa-moon moon-icon toggle-icon"></i>
             </button>
         </div>
     </nav>
@@ -46,12 +46,12 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Designing with Purpose. Building with Vision.</h1>
-                    <p class="hero-subtitle">I'm Francis Arkuh — an architecture and creative technology student crafting bold ideas into functional realities. From blueprints to bots, I design experiences that blend structure, logic, and imagination.</p>
+                <div class="hero-content glass-card reveal">
+                    <h1 class="text-3d">Designing with Purpose. Building with Vision.</h1>
+                    <p class="hero-subtitle reveal">I'm Francis Arkuh — an architecture and creative technology student crafting bold ideas into functional realities. From blueprints to bots, I design experiences that blend structure, logic, and imagination.</p>
                     <div class="cta-buttons">
-                        <a href="portfolio.html" class="btn btn-primary">View My Work</a>
-                        <a href="certificates.html" class="btn btn-secondary">View Certificates</a>
+                        <a href="portfolio.html" class="btn btn-primary ripple">View My Work</a>
+                        <a href="certificates.html" class="btn btn-secondary ripple">View Certificates</a>
                     </div>
                 </div>
             </div>
@@ -59,76 +59,76 @@
 
         <section class="featured-projects">
             <div class="container">
-                <h2>Featured Projects</h2>
+                <h2 class="text-3d reveal">Featured Projects</h2>
                 <div class="project-grid">
-                    <div class="project-card">
+                    <div class="project-card glass-card tilt-element reveal">
                         <div class="project-image">
                             <img src="assets/residential_floor_plan_layout.jpg" alt="Residential Floor Plan Layout" width="400" height="260" loading="lazy">
                         </div>
                         <div class="project-content">
-                            <span class="project-category">Architecture</span>
+                            <span class="project-category"><i class="fas fa-building"></i> Architecture</span>
                             <h3>Modern Residential Design</h3>
                             <p>A contemporary residential project showcasing innovative space planning and sustainable design principles.</p>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card glass-card tilt-element reveal">
                         <div class="project-image">
                             <img src="assets/smart_barrier_sensor_gate.jpg" alt="Smart Barrier Sensor Gate" width="400" height="260" loading="lazy">
                         </div>
                         <div class="project-content">
-                            <span class="project-category">Engineering</span>
+                            <span class="project-category"><i class="fas fa-shield-alt"></i> Engineering</span>
                             <h3>Smart Barrier Sensor Gate</h3>
                             <p>An automated barrier system integrating sensors for enhanced security and efficient access control in modern facilities.</p>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card glass-card tilt-element reveal">
                         <div class="project-image">
                             <img src="assets/fll_team_collaboration.JPG" alt="FLL Team Collaboration" width="400" height="260" loading="lazy">
                         </div>
                         <div class="project-content">
-                            <span class="project-category">Teamwork</span>
+                            <span class="project-category"><i class="fas fa-users"></i> Teamwork</span>
                             <h3>FLL Team Collaboration</h3>
                             <p>Collaborative robotics project for the First Lego League, emphasizing teamwork, innovation, and problem-solving skills.</p>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="portfolio.html" class="btn btn-primary">View All Projects</a>
+                    <a href="portfolio.html" class="btn btn-primary ripple">View All Projects</a>
                 </div>
             </div>
         </section>
 
         <section class="services">
             <div class="container">
-                <h2>What I Do</h2>
+                <h2 class="text-3d reveal">What I Do</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card glass-card tilt-element reveal">
                         <i class="fas fa-drafting-compass"></i>
                         <h3>Architectural Design</h3>
                         <p>Creating innovative and sustainable architectural solutions that transform spaces and enhance lives. From concept to completion, I bring your vision to life.</p>
-                        <a href="portfolio.html" class="service-link">View Projects</a>
+                        <a href="portfolio.html" class="service-link ripple">View Projects</a>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card glass-card tilt-element reveal">
                         <i class="fas fa-code"></i>
                         <h3>Technical Innovation</h3>
                         <p>Developing cutting-edge technical solutions that bridge the gap between architecture and technology. Pushing boundaries with smart design integration.</p>
-                        <a href="portfolio.html" class="service-link">Explore Innovations</a>
+                        <a href="portfolio.html" class="service-link ripple">Explore Innovations</a>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card glass-card tilt-element reveal">
                         <i class="fas fa-certificate"></i>
                         <h3>Professional Excellence</h3>
                         <p>Delivering exceptional results through a combination of technical expertise and creative vision. Committed to excellence in every project.</p>
-                        <a href="certificates.html" class="service-link">View Certifications</a>
+                        <a href="certificates.html" class="service-link ripple">View Certifications</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section glass-card reveal">
             <div class="container">
-                <h2>Ready to Transform Your Space?</h2>
+                <h2 class="text-3d">Ready to Transform Your Space?</h2>
                 <p>Let's collaborate to create something extraordinary. Whether you're planning a new project or seeking innovative solutions, I'm here to help bring your vision to life.</p>
-                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+                <a href="contact.html" class="btn btn-primary ripple">Start a Conversation</a>
             </div>
         </section>
     </main>
@@ -137,27 +137,31 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
                     <p>Architecture & Design Portfolio</p>
                 </div>
                 <div class="footer-links">
-                    <a href="index.html">Home</a>
+                    <h3>Quick Links</h3>
+                    <a href="index.html" class="active">Home</a>
                     <a href="portfolio.html">Portfolio</a>
                     <a href="about.html">About</a>
                     <a href="certificates.html">Certificates</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn" class="ripple"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram" class="ripple"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance" class="ripple"><i class="fab fa-behance"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Francis Arkuh. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Francis Arkuh. All rights reserved.</p>
             </div>
         </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

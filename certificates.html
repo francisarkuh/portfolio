@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificates & Honors - Francis Arkuh</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/FA.png">
 </head>
@@ -17,11 +17,11 @@
                 <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="about.html">About</a>
-                <a href="certificates.html">Certificates</a>
+                <a href="certificates.html" class="active">Certificates</a>
                 <a href="contact.html">Contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon toggle-icon"></i>
+                    <i class="fas fa-moon moon-icon toggle-icon"></i>
                 </button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -31,14 +31,15 @@
             </button>
         </div>
         <div class="mobile-menu">
+            
             <a href="index.html">Home</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="about.html">About</a>
-            <a href="certificates.html">Certificates</a>
+            <a href="certificates.html" class="active">Certificates</a>
             <a href="contact.html">Contact</a>
-            <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon moon-icon"></i>
-                <i class="fas fa-sun sun-icon"></i>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun sun-icon toggle-icon"></i>
+                <i class="fas fa-moon moon-icon toggle-icon"></i>
             </button>
         </div>
     </nav>
@@ -46,18 +47,18 @@
     <main>
         <section class="certificates-hero">
             <div class="container">
-                <h1>Certificates & Honors</h1>
-                <p class="subtitle">Recognitions of Excellence in Leadership & Innovation</p>
+                <h1 class="text-3d reveal">Certificates & Honors</h1>
+                <p class="subtitle reveal">Recognitions of Excellence in Leadership & Innovation</p>
             </div>
         </section>
 
         <section class="certificates-content">
             <div class="container">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="leadership">Leadership</button>
-                    <button class="filter-btn" data-filter="academic">Academic</button>
-                    <button class="filter-btn" data-filter="extracurricular">Extracurricular</button>
+                <div class="filter-buttons glass-card">
+                    <button class="filter-btn active ripple" data-filter="all">All</button>
+                    <button class="filter-btn ripple" data-filter="leadership">Leadership</button>
+                    <button class="filter-btn ripple" data-filter="academic">Academic</button>
+                    <button class="filter-btn ripple" data-filter="extracurricular">Extracurricular</button>
                 </div>
 
                 <div class="certificates-grid" id="certificates-grid">
@@ -71,24 +72,25 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">FRANCIS ARKUH</a>
+                    <a href="index.html" class="logo"><img src="assets/FA.png" alt="FA Logo" style="height:2.2rem;width:auto;vertical-align:middle;"></a>
                     <p>Architecture & Design Portfolio</p>
                 </div>
                 <div class="footer-links">
+                    <h3>Quick Links</h3>
                     <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
                     <a href="about.html">About</a>
-                    <a href="certificates.html">Certificates</a>
+                    <a href="certificates.html" class="active">Certificates</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="https://linkedin.com/in/francisarkuh" target="_blank" aria-label="LinkedIn" class="ripple"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/francisarkuh" target="_blank" aria-label="Instagram" class="ripple"><i class="fab fa-instagram"></i></a>
+                    <a href="https://behance.net/francisarkuh" target="_blank" aria-label="Behance" class="ripple"><i class="fab fa-behance"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Francis Arkuh. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Francis Arkuh. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -189,20 +191,20 @@
         // Function to create a certificate card
         function createCertificateCard(certificate) {
             const card = document.createElement('div');
-            card.className = 'certificate-card';
+            card.className = 'certificate-card glass-card tilt-element reveal';
             card.dataset.category = certificate.category;
 
             card.innerHTML = `
                 <div class="certificate-image">
                     <img src="${certificate.image}" alt="${certificate.title}">
                     <div class="certificate-overlay">
-                        <button class="view-certificate" onclick="openCertificate('${certificate.image}')">
+                        <button class="view-certificate ripple" onclick="openCertificate('${certificate.image}')">
                             <i class="fas fa-expand"></i>
                         </button>
                     </div>
                 </div>
                 <div class="certificate-info">
-                    <span class="certificate-category">${certificate.category}</span>
+                    <span class="certificate-category"><i class="fas fa-certificate"></i> ${certificate.category.charAt(0).toUpperCase() + certificate.category.slice(1)}</span>
                     <h3>${certificate.title}</h3>
                     <p>${certificate.issuer}</p>
                     <p class="certificate-date">${certificate.date}</p>
@@ -242,6 +244,8 @@
 
         // Load certificates when the page loads
         document.addEventListener('DOMContentLoaded', loadCertificates);
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html> 
